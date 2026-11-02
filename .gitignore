@@ -1,0 +1,16 @@
+# dependencies
+node_modules/
+
+# local data
+*.log
+*.tmp
+
+# secrets
+.env
+*.env
+secrets/
+
+# backups / temp
+*.bak
+*.bak-*
+.DS_Store

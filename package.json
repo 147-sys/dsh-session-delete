@@ -1,0 +1,46 @@
+{
+  "name": "dsh-session-delete",
+  "version": "1.0.1",
+  "description": "DeepSeek Harness plugin: delete a workspace session from the sidebar with a confirmation dialog. Removes the session log directory, workspace accounting, and projection cache (keeping an archive tombstone so a still-live Host session cannot resurrect the row), while never touching memory-plugin storage.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node test/verify.test.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "~3.18.5"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "session",
+    "delete",
+    "workspace",
+    "memory-safe"
+  ],
+  "author": "147-sys",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/147-sys/dsh-session-delete.git"
+  },
+  "license": "MIT"
+}

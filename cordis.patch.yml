@@ -1,0 +1,21 @@
+# dsh-session-delete bundle patch: inserts this plugin into the profile roster.
+# Install with:
+#
+#   dsh plugin --profile desktop add link:<absolute-path-to-this-package>
+#
+# Or through the built-in plugin manager (install_bundle with the same path).
+#
+# `memoryPathsToExclude` is the user-facing escape hatch for memory-plugin
+# storage that the automatic detection cannot see. Each entry may be:
+#   - an absolute path                C:\Users\me\.dsh\memory
+#   - a home-relative path            ~/.dsh/.dsh-memory
+#   - a $DSH_HOME path                $DSH_HOME/memories
+#   - a path relative to the workspace  对话记忆
+# Defaults already protect $DSH_HOME/memory, $DSH_HOME/.dsh-memory,
+# $DSH_HOME/memories, $DSH_MEMORY_DIR, the memory plugin's configured
+# memoryDir/dbFile, and <workspace>/对话记忆.
+- insert:
+    - id: session-delete
+      name: dsh-session-delete
+      config:
+        memoryPathsToExclude: []
